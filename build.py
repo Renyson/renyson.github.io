@@ -145,6 +145,13 @@ def build():
 """
         with open(os.path.join(DIST, 'sitemap.xml'), 'w', encoding='utf-8') as f:
             f.write(sitemap)
+        # Generate robots.txt pointing to sitemap
+        try:
+            robots = f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n"
+            with open(os.path.join(DIST, 'robots.txt'), 'w', encoding='utf-8') as f:
+                f.write(robots)
+        except Exception as re:
+            print('Could not write robots.txt:', re)
     except Exception as e:
         print('Could not write RSS/sitemap:', e)
 

@@ -54,3 +54,13 @@ SEO
 Sitemap
 
 - The builder now also produces a `dist/sitemap.xml` (Sitemap XML 0.9) containing the site index and each post URL with `lastmod` where available. Ensure `SITE_URL` in `build.py` matches your published domain so the sitemap contains correct absolute URLs.
+
+Robots
+
+- The builder now writes `dist/robots.txt` which points to the generated sitemap. This helps crawlers discover your sitemap. Example content (generated automatically):
+
+	```text
+	User-agent: *
+	Allow: /
+	Sitemap: https://renyson.github.io/sitemap.xml
+	```
