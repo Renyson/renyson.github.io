@@ -1,0 +1,9 @@
+[
+  {
+    "title": "Hello, world",
+    "date": "2025-11-23",
+    "slug": "hello-world",
+    "excerpt": "My first post — a quick test of the static blog.",
+    "file": "posts/hello-world.html"
+  }
+]
