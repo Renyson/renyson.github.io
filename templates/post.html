@@ -3,7 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>{{ title }} — My Blog</title>
+    <title>{{ title }} — {{ site_title }}</title>
+    <meta name="description" content="{{ excerpt }}" />
+    <link rel="canonical" href="{{ site_url }}/posts/{{ slug }}.html" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ title }} — {{ site_title }}" />
+    <meta property="og:description" content="{{ excerpt }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ site_url }}/posts/{{ slug }}.html" />
+    <meta property="og:site_name" content="{{ site_title }}" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{{ title }} — {{ site_title }}" />
+    <meta name="twitter:description" content="{{ excerpt }}" />
     <link rel="stylesheet" href="/assets/style.css" />
   </head>
   <body>

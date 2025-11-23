@@ -3,7 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>My Blog</title>
+    <title>{{ site_title }}</title>
+    <meta name="description" content="{{ site_description }}" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ site_title }}" />
+    <meta property="og:description" content="{{ site_description }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site_url }}" />
     <link rel="stylesheet" href="/assets/style.css" />
   </head>
   <body>

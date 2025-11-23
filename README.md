@@ -42,3 +42,11 @@ cd dist && python3 -m http.server 8000
 ```
 
 The generated output is written to `dist/`. You can add Markdown posts to `content/posts/` (use YAML-style front matter) and rebuild.
+
+RSS feed
+
+- The builder now generates an RSS feed at `dist/rss.xml` (also suitable for GitHub Pages). It includes `title`, `link`, `description`, and `pubDate` where available.
+
+SEO
+
+- Templates (`templates/index.html`, `templates/post.html`) include basic meta description, canonical link, Open Graph, and Twitter cards. The values are derived from site metadata configured in `build.py` and each post's front matter (`excerpt`).

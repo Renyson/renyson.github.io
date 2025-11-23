@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>My Blog</title>
+    <link>https://renyson.github.io</link>
+    <description>A lightweight static blog generated with a tiny builder.</description>
+    <lastBuildDate>Sun, 23 Nov 2025 03:22:15 -0000</lastBuildDate>
+
+    <item>
+      <title>Welcome to the Dummy Blog</title>
+      <link>https://renyson.github.io/posts/welcome.html</link>
+      <guid>https://renyson.github.io/posts/welcome.html</guid>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 -0000</pubDate>
+      <description><![CDATA[A short welcome post for the dummy blog build.]]></description>
+    </item>
+
+    <item>
+      <title>Second Entry</title>
+      <link>https://renyson.github.io/posts/second-entry.html</link>
+      <guid>https://renyson.github.io/posts/second-entry.html</guid>
+      <pubDate>Thu, 20 Nov 2025 00:00:00 -0000</pubDate>
+      <description><![CDATA[Another short post to populate the dummy blog.]]></description>
+    </item>
+
+    <item>
+      <title>A Long Read</title>
+      <link>https://renyson.github.io/posts/long-read.html</link>
+      <guid>https://renyson.github.io/posts/long-read.html</guid>
+      <pubDate>Sat, 01 Nov 2025 00:00:00 -0000</pubDate>
+      <description><![CDATA[A longer example post to show content length.]]></description>
+    </item>
+
+  </channel>
+</rss>
