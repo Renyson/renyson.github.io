@@ -23,3 +23,22 @@ To add a post:
 2. Add a JSON entry to `posts/posts.json` with `title`, `date`, `slug`, and `excerpt`.
 
 Want a different setup (e.g., Jekyll, Hugo, Eleventy)? Tell me and I can scaffold that instead.
+
+Build system (Markdown -> static `dist/`)
+
+This repo now includes a small Python builder that converts Markdown posts in `content/posts/` into a static `dist/` site.
+
+Usage:
+
+```bash
+# install dependencies
+pip3 install -r requirements.txt --user
+
+# build
+python3 build.py
+
+# serve the generated site
+cd dist && python3 -m http.server 8000
+```
+
+The generated output is written to `dist/`. You can add Markdown posts to `content/posts/` (use YAML-style front matter) and rebuild.

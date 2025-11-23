@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Welcome to the Dummy Blog",
+    "date": "2025-11-23",
+    "slug": "welcome",
+    "excerpt": "A short welcome post for the dummy blog build."
+  },
+  {
+    "title": "Second Entry",
+    "date": "2025-11-20",
+    "slug": "second-entry",
+    "excerpt": "Another short post to populate the dummy blog."
+  },
+  {
+    "title": "A Long Read",
+    "date": "2025-11-01",
+    "slug": "long-read",
+    "excerpt": "A longer example post to show content length."
+  }
+]
