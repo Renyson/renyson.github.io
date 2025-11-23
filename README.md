@@ -50,3 +50,7 @@ RSS feed
 SEO
 
 - Templates (`templates/index.html`, `templates/post.html`) include basic meta description, canonical link, Open Graph, and Twitter cards. The values are derived from site metadata configured in `build.py` and each post's front matter (`excerpt`).
+
+Sitemap
+
+- The builder now also produces a `dist/sitemap.xml` (Sitemap XML 0.9) containing the site index and each post URL with `lastmod` where available. Ensure `SITE_URL` in `build.py` matches your published domain so the sitemap contains correct absolute URLs.

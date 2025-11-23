@@ -83,7 +83,7 @@ def build():
     with open(os.path.join(DIST, 'posts.json'), 'w', encoding='utf-8') as f:
         json.dump(posts, f, indent=2)
 
-    # Generate a simple RSS feed
+    # Generate a simple RSS feed and a sitemap
     try:
         rss_items = []
         for p in posts:
@@ -118,8 +118,35 @@ def build():
 """
         with open(os.path.join(DIST, 'rss.xml'), 'w', encoding='utf-8') as f:
             f.write(rss)
+
+        # Generate sitemap.xml
+        sitemap_items = []
+        # Add the index page
+        try:
+            sitemap_items.append(f"  <url>\n    <loc>{SITE_URL}/</loc>\n    <lastmod>{datetime.utcnow().date().isoformat()}</lastmod>\n  </url>\n")
+        except Exception:
+            sitemap_items.append(f"  <url>\n    <loc>{SITE_URL}/</loc>\n  </url>\n")
+
+        for p in posts:
+            loc = f"{SITE_URL}/posts/{p['slug']}.html"
+            lastmod = ''
+            if p.get('date'):
+                # expect YYYY-MM-DD
+                lastmod = p.get('date')
+            entry = f"  <url>\n    <loc>{loc}</loc>\n"
+            if lastmod:
+                entry += f"    <lastmod>{lastmod}</lastmod>\n"
+            entry += "  </url>\n"
+            sitemap_items.append(entry)
+
+        sitemap = f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{''.join(sitemap_items)}</urlset>
+"""
+        with open(os.path.join(DIST, 'sitemap.xml'), 'w', encoding='utf-8') as f:
+            f.write(sitemap)
     except Exception as e:
-        print('Could not write RSS:', e)
+        print('Could not write RSS/sitemap:', e)
 
     print('Build complete. Output in', DIST)
 
